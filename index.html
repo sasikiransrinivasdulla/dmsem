@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Mining Learning Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-database"></i> Data Mining Semester
+            </a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <!-- Overall Progress Section -->
+        <div class="progress-section">
+            <h2>Overall Progress</h2>
+            <div class="progress-container">
+                <div class="progress">
+                    <div class="progress-bar" id="overallProgress" role="progressbar" aria-valuenow="0"
+                        aria-valuemin="0" aria-valuemax="100">
+                        0%
+                    </div>
+                </div>
+                <div class="progress-stats">
+                    <span id="completedTopics">0</span> / <span id="totalTopics">0</span> Topics Completed
+                </div>
+            </div>
+        </div>
+
+        <!-- Units Container -->
+        <div class="units-container">
+            <!-- UNIT I -->
+            <div class="unit-card">
+                <div class="unit-header" onclick="toggleUnit('unit1')">
+                    <div class="unit-title">
+                        <i class="fas fa-chevron-down toggle-icon" id="unit1-icon"></i>
+                        <h3>UNIT I: Data Warehousing and OLAP</h3>
+                    </div>
+                    <div class="unit-actions">
+                        <button class="btn-pdf" onclick="openPDF(event, 'pdfs/unit1.pdf')" title="View PDF Notes">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </button>
+                        <div class="unit-progress-mini">
+                            <span id="unit1-progress-text">0%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="unit-content" id="unit1-content">
+                    <div class="topics-list">
+                        <div class="topic-item">
+                            <span class="topic-name">Basic Concepts of Data Warehousing</span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining Data Warehousing Basic Concepts')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit1"
+                                        data-topic="basic-concepts">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item important">
+                            <span class="topic-name">
+                                <i class="fas fa-star star-icon"></i>
+                                Data Warehouse Modeling: Data Cube and OLAP
+                            </span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining Data Cube OLAP Operations')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit1"
+                                        data-topic="data-cube-olap">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item">
+                            <span class="topic-name">Data Warehouse Design and Usage</span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining Data Warehouse Design Architecture')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit1"
+                                        data-topic="dw-design">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item">
+                            <span class="topic-name">Data Warehouse Implementation</span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining Data Warehouse Implementation')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit1"
+                                        data-topic="dw-implementation">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item">
+                            <span class="topic-name">Cloud Data Warehouse</span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube" onclick="searchYouTube('Data Mining Cloud Data Warehouse')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit1"
+                                        data-topic="cloud-dw">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item important">
+                            <span class="topic-name">
+                                <i class="fas fa-star star-icon"></i>
+                                Data Objects & Attribute Types
+                            </span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining Data Objects Attribute Types')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit1"
+                                        data-topic="data-objects">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item important">
+                            <span class="topic-name">
+                                <i class="fas fa-star star-icon"></i>
+                                Basic Statistical Descriptions of Data
+                            </span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining Statistical Descriptions Mean Median Mode')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit1"
+                                        data-topic="statistics">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item">
+                            <span class="topic-name">Data Visualization</span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining Data Visualization Techniques')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit1"
+                                        data-topic="visualization">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item important">
+                            <span class="topic-name">
+                                <i class="fas fa-star star-icon"></i>
+                                Measuring Data Similarity and Dissimilarity
+                            </span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining Similarity Dissimilarity Measures')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit1"
+                                        data-topic="similarity">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UNIT II -->
+            <div class="unit-card">
+                <div class="unit-header" onclick="toggleUnit('unit2')">
+                    <div class="unit-title">
+                        <i class="fas fa-chevron-down toggle-icon" id="unit2-icon"></i>
+                        <h3>UNIT II: Data Preprocessing</h3>
+                    </div>
+                    <div class="unit-actions">
+                        <button class="btn-pdf" onclick="openPDF(event, 'pdfs/unit2.pdf')" title="View PDF Notes">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </button>
+                        <div class="unit-progress-mini">
+                            <span id="unit2-progress-text">0%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="unit-content" id="unit2-content">
+                    <div class="topics-list">
+                        <div class="topic-item">
+                            <span class="topic-name">Data Preprocessing Overview</span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining Preprocessing Overview')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit2"
+                                        data-topic="preprocessing-overview">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item important">
+                            <span class="topic-name">
+                                <i class="fas fa-star star-icon"></i>
+                                Data Cleaning
+                            </span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining Data Cleaning Techniques')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit2"
+                                        data-topic="data-cleaning">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item important">
+                            <span class="topic-name">
+                                <i class="fas fa-star star-icon"></i>
+                                Data Integration
+                            </span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining Data Integration Schema Matching')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit2"
+                                        data-topic="data-integration">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item important">
+                            <span class="topic-name">
+                                <i class="fas fa-star star-icon"></i>
+                                Data Reduction
+                            </span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining Data Reduction Techniques')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit2"
+                                        data-topic="data-reduction">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item important">
+                            <span class="topic-name">
+                                <i class="fas fa-star star-icon"></i>
+                                Data Transformation and Normalization
+                            </span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining Data Transformation Normalization')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit2"
+                                        data-topic="data-transformation">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item important">
+                            <span class="topic-name">
+                                <i class="fas fa-star star-icon"></i>
+                                Data Discretization
+                            </span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining Data Discretization Binning')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit2"
+                                        data-topic="discretization">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UNIT III -->
+            <div class="unit-card">
+                <div class="unit-header" onclick="toggleUnit('unit3')">
+                    <div class="unit-title">
+                        <i class="fas fa-chevron-down toggle-icon" id="unit3-icon"></i>
+                        <h3>UNIT III: Classification</h3>
+                    </div>
+                    <div class="unit-actions">
+                        <button class="btn-pdf" onclick="openPDF(event, 'pdfs/unit3.pdf')" title="View PDF Notes">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </button>
+                        <div class="unit-progress-mini">
+                            <span id="unit3-progress-text">0%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="unit-content" id="unit3-content">
+                    <div class="topics-list">
+                        <div class="topic-item">
+                            <span class="topic-name">Classification Basic Concepts</span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining Classification Basic Concepts')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit3"
+                                        data-topic="classification-basics">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item">
+                            <span class="topic-name">General Approach to Classification Problem</span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining Classification Approach')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit3"
+                                        data-topic="classification-approach">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item important">
+                            <span class="topic-name">
+                                <i class="fas fa-star star-icon"></i>
+                                Decision Tree Induction
+                            </span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining Decision Tree Induction')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit3"
+                                        data-topic="decision-tree">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item important">
+                            <span class="topic-name">
+                                <i class="fas fa-star star-icon"></i>
+                                Attribute Selection Measures (Gini, Entropy, Gain Ratio)
+                            </span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining Information Gain Gini Index Entropy')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit3"
+                                        data-topic="attribute-selection">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item">
+                            <span class="topic-name">Tree Pruning</span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube" onclick="searchYouTube('Data Mining Decision Tree Pruning')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit3"
+                                        data-topic="tree-pruning">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item important">
+                            <span class="topic-name">
+                                <i class="fas fa-star star-icon"></i>
+                                Bayes Theorem
+                            </span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube" onclick="searchYouTube('Data Mining Bayes Theorem')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit3"
+                                        data-topic="bayes-theorem">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item important">
+                            <span class="topic-name">
+                                <i class="fas fa-star star-icon"></i>
+                                Naïve Bayes Classification
+                            </span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining Naive Bayes Classifier')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit3"
+                                        data-topic="naive-bayes">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item">
+                            <span class="topic-name">Rule-Based Classification</span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining Rule Based Classification')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit3"
+                                        data-topic="rule-based">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item important">
+                            <span class="topic-name">
+                                <i class="fas fa-star star-icon"></i>
+                                Model Evaluation and Selection
+                            </span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining Model Evaluation Confusion Matrix Accuracy')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit3"
+                                        data-topic="model-evaluation">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UNIT IV -->
+            <div class="unit-card">
+                <div class="unit-header" onclick="toggleUnit('unit4')">
+                    <div class="unit-title">
+                        <i class="fas fa-chevron-down toggle-icon" id="unit4-icon"></i>
+                        <h3>UNIT IV: Association Analysis</h3>
+                    </div>
+                    <div class="unit-actions">
+                        <button class="btn-pdf" onclick="openPDF(event, 'pdfs/unit4.pdf')" title="View PDF Notes">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </button>
+                        <div class="unit-progress-mini">
+                            <span id="unit4-progress-text">0%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="unit-content" id="unit4-content">
+                    <div class="topics-list">
+                        <div class="topic-item">
+                            <span class="topic-name">Association Analysis Problem Definition</span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining Association Analysis Problem')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit4"
+                                        data-topic="association-problem">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item important">
+                            <span class="topic-name">
+                                <i class="fas fa-star star-icon"></i>
+                                Frequent Itemset Generation
+                            </span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining Frequent Itemset Generation')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit4"
+                                        data-topic="frequent-itemset">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item important">
+                            <span class="topic-name">
+                                <i class="fas fa-star star-icon"></i>
+                                Rule Generation and Confidence-Based Pruning
+                            </span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining Association Rule Generation Confidence')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit4"
+                                        data-topic="rule-generation">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item important">
+                            <span class="topic-name">
+                                <i class="fas fa-star star-icon"></i>
+                                Apriori Algorithm
+                            </span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube" onclick="searchYouTube('Data Mining Apriori Algorithm')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit4"
+                                        data-topic="apriori">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item">
+                            <span class="topic-name">Improving Efficiency of Apriori</span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining Apriori Optimization Techniques')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit4"
+                                        data-topic="apriori-efficiency">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item">
+                            <span class="topic-name">Compact Representation of Frequent Itemsets</span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining Compact Representation Frequent Itemsets')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit4"
+                                        data-topic="compact-representation">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item important">
+                            <span class="topic-name">
+                                <i class="fas fa-star star-icon"></i>
+                                FP-Growth Algorithm
+                            </span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube" onclick="searchYouTube('Data Mining FP Growth Algorithm')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit4"
+                                        data-topic="fp-growth">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UNIT V -->
+            <div class="unit-card">
+                <div class="unit-header" onclick="toggleUnit('unit5')">
+                    <div class="unit-title">
+                        <i class="fas fa-chevron-down toggle-icon" id="unit5-icon"></i>
+                        <h3>UNIT V: Cluster Analysis</h3>
+                    </div>
+                    <div class="unit-actions">
+                        <button class="btn-pdf" onclick="openPDF(event, 'pdfs/unit5.pdf')" title="View PDF Notes">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </button>
+                        <div class="unit-progress-mini">
+                            <span id="unit5-progress-text">0%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="unit-content" id="unit5-content">
+                    <div class="topics-list">
+                        <div class="topic-item">
+                            <span class="topic-name">Cluster Analysis Overview</span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining Cluster Analysis Overview')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit5"
+                                        data-topic="cluster-overview">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item">
+                            <span class="topic-name">Basics and Importance of Cluster Analysis</span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining Clustering Basics Importance')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit5"
+                                        data-topic="cluster-basics">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item">
+                            <span class="topic-name">Clustering Techniques and Types of Clusters</span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining Clustering Techniques Types')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit5"
+                                        data-topic="clustering-techniques">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item important">
+                            <span class="topic-name">
+                                <i class="fas fa-star star-icon"></i>
+                                K-Means Algorithm
+                            </span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining K Means Clustering Algorithm')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit5"
+                                        data-topic="k-means">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item">
+                            <span class="topic-name">K-Means Additional Issues</span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining K Means Issues Limitations')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit5"
+                                        data-topic="k-means-issues">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item">
+                            <span class="topic-name">Bisecting K-Means</span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining Bisecting K Means Algorithm')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit5"
+                                        data-topic="bisecting-k-means">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item important">
+                            <span class="topic-name">
+                                <i class="fas fa-star star-icon"></i>
+                                Agglomerative Hierarchical Clustering
+                            </span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining Hierarchical Clustering Agglomerative')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit5"
+                                        data-topic="hierarchical">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item important">
+                            <span class="topic-name">
+                                <i class="fas fa-star star-icon"></i>
+                                DBSCAN Algorithm
+                            </span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining DBSCAN Density Based Clustering')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit5" data-topic="dbscan">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="topic-item">
+                            <span class="topic-name">DBSCAN Strengths and Weaknesses</span>
+                            <div class="topic-actions">
+                                <button class="btn-youtube"
+                                    onclick="searchYouTube('Data Mining DBSCAN Advantages Disadvantages')"
+                                    title="Search on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="topic-checkbox" data-unit="unit5"
+                                        data-topic="dbscan-analysis">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>🌟 Good Luck with Your Exams! 🌟</p>
+    </footer>
+
+    <!-- PDF Viewer Modal -->
+    <div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="pdfModalLabel">📄 Unit Notes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <iframe id="pdfViewer" style="width: 100%; height: 80vh; border: none;"></iframe>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a id="pdfDownloadLink" href="#" class="btn btn-success" download>
+                        <i class="fas fa-download"></i> Download PDF
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
